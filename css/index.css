@@ -264,9 +264,10 @@
   }
   /* Wymuszone ukrycie pseudo-elementu */
   .klient-right::before {
-    display: none !important;
-    content: none !important;
-    background: none !important;
+    background-image: url('../img/mobilny.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
   /* Usunięcie tła na mobilkach */
   .klient-right {
