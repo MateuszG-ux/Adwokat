@@ -251,27 +251,42 @@
 
 /* RESPONSYWNOŚĆ */
 @media (max-width: 992px) {
-  /* Dla mniejszych tabletów: klient-content stackuje się pionowo */
+  /* Dla mniejszych tabletów: klient-content pionowo */
   .klient-content {
-    flex-direction: column;
-    height: auto;
+    flex-direction: column !important; /* pionowo */
+    height: auto; /* wysokość dostosowana */
   }
   .klient-left,
   .klient-right {
     flex: unset;
-    height: auto;
     width: 100%;
+    height: auto;
+    max-width: 100vw;
   }
-  .content-wrapper {
-    max-width: 95%;
+  /* Ukrycie tła obrazu w .klient-right */
+  .klient-right::before {
+    display: none;
+  }
+  /* Białe tło i marginesy dla .klient-right */
+  .klient-right {
+    background-color: white;
     padding: 1rem 0;
+    color: var(--granat);
+  }
+  /* Tekst pod obrazkiem, max szerokość 80%, wyśrodkowany */
+  .content-wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: block; /* normalny flow */
   }
   .content-wrapper blockquote {
     font-size: 2rem;
+    text-align: left;
   }
   .content-wrapper h2 {
     font-size: 1.3rem;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -308,9 +323,17 @@
   .klient-section {
     padding: 0 1rem;
   }
+
+  /* Dla klient-content pionowo, tekst i obraz pod sobą */
+  .klient-content {
+    height: auto;
+  }
+  .klient-left,
+  .klient-right {
+    max-width: 100vw;
+  }
 }
 
-/* Bardzo małe ekrany */
 @media (max-width: 480px) {
   .content-wrapper blockquote {
     font-size: 1.6rem;
@@ -336,5 +359,13 @@
   .ikona-uslugi {
     width: 50px;
     height: 50px;
+  }
+
+  .klient-content {
+    height: auto;
+  }
+  .klient-left,
+  .klient-right {
+    max-width: 100vw;
   }
 }
