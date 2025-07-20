@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Obsługa burgera (spójna z CSS)
   const burger = document.querySelector(".burger");
-  const navList = document.querySelector(".main-nav ul");
+  const navList = document.querySelector(".main-nav");
 
   if (burger && navList) {
     burger.addEventListener("click", () => {
