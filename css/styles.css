@@ -362,31 +362,22 @@ footer.footer::before {
 
 /* Telefon (smartfony) */
 @media (max-width: 768px) {
-  .main-nav ul {
+  .main-nav {
     display: none;
-    flex-direction: column;
-    background: var(--bialy);
     position: absolute;
     top: 100%;
     right: 0;
+    background: var(--bialy);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 100;
     min-width: 200px;
+    flex-direction: column;
   }
 
-  .main-nav ul.show {
+  .main-nav.show {
     display: flex;
-  }
-
-  .main-nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  .main-nav ul a {
-    font-weight: 600;
-    color: var(--granat);
   }
 
   .burger {
@@ -407,7 +398,6 @@ footer.footer::before {
     margin: 4px 0;
     transition: all 0.3s ease;
   }
-
   .footer-container {
     flex-direction: column;
   }

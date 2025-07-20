@@ -38,12 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
    // Obsługa burgera (toggle na <ul>)
   const burger = document.querySelector(".burger");
-  const navList = document.querySelector(".main-nav ul");
+const nav = document.querySelector(".main-nav");
 
-  if (burger && navList) {
-    burger.addEventListener("click", () => {
-      navList.classList.toggle("show");
-    });
+burger.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});
   }
 
   // AOS animacje
