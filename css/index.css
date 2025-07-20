@@ -284,11 +284,11 @@
   }
   .content-wrapper blockquote {
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
   }
   .content-wrapper h2 {
     font-size: 1.3rem;
-    text-align: left;
+    text-align: right;
   }
 }
 
