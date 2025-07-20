@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  
   if (scrollBtn) {
     scrollBtn.addEventListener("click", (e) => {
       e.preventDefault();
