@@ -1,0 +1,431 @@
+/* Kolory */
+:root {
+  --granat: #1e2a38;
+  --zloty: #D4AF37;
+  --bialy: #ffffff;
+  --jasny: #f4f4f4;
+}
+
+/* Reset i podstawy */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: var(--bialy);
+  color: var(--granat);
+  line-height: 1.6;
+}
+
+/* Header */
+.main-header {
+  background: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.logo-left img,
+.logo-right .name,
+.logo-right .title,
+.main-nav a {
+  transition: all 0.3s ease; 
+}
+
+/* --- NAV CONTAINER --- */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* --- LOGO --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+
+.logo-left img {
+  height: 90px;
+  width: auto;
+  user-select: none;
+  display: block;
+  padding-right: 20px;
+  border-right: 2px solid var(--zloty);
+  margin-right: 20px;
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+  user-select: none;
+}
+
+.logo-right .name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  color: var(--granat);
+}
+
+.logo-right .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.8;
+  white-space: nowrap;
+  color: var(--granat);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* --- NAWIGACJA I KONTAKT --- */
+.main-nav, .contact-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  white-space: nowrap;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--granat);
+  transition: color 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--zloty);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--zloty);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.main-header.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 0 0 15px 15px;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled .logo-left img {
+  height: 60px;
+  transition: height 0.3s ease;
+}
+
+.main-header.scrolled .logo-right .name {
+  font-size: 1rem;
+  transition: font-size 0.3s ease;
+}
+
+.main-header.scrolled .logo-right .title {
+  font-size: 0.7rem;
+  transition: font-size 0.3s ease;
+}
+
+.main-header.scrolled .main-nav a {
+  font-size: 0.9rem;
+  transition: font-size 0.3s ease;
+}
+
+/* Stopka */
+footer.footer {
+  background: url('../img/stopka.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 40px 20px 20px 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+}
+
+footer.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(50, 50, 50, 0.6);
+  z-index: 0;
+}
+
+.footer-container,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ffd700;
+}
+
+.footer-column address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.footer-column p {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #ffd700;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 15px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.footer-divider {
+  height: 2px;
+  width: 800px;
+  margin: 0 auto 20px auto;
+  background-color: var(--zloty);
+  box-shadow: 0 2px 8px rgba(0,0,0,1);
+  border-radius: 2px;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+  color: var(--zloty);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--zloty);
+  box-shadow: 0 0 0 transparent;
+  text-decoration: none;
+}
+
+.scroll-to-top:hover {
+  box-shadow: 0 0 12px var(--zloty);
+  background-color: #fff;
+  color: var(--zloty);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ------------------ RESPONSYWNOŚĆ ------------------ */
+
+/* Tablet i mniejsze laptopy */
+@media (max-width: 992px) {
+  .nav-container {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .main-nav {
+    order: 3;
+    flex-basis: 100%;
+    display: none;
+    background: var(--granat);
+    padding: 1rem 0;
+    justify-content: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .burger {
+    display: flex;
+    order: 1;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+}
+
+/* Telefon (smartfony) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: var(--granat);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    border-radius: 0 0 4px 4px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 1rem 0;
+  }
+
+  .burger {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    z-index: 1000;
+  }
+
+  .burger div {
+    width: 100%;
+    height: 4px;
+    background: var(--bialy);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+
+  /* Stopka - kolumny w pion */
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-column {
+    flex: 1 1 100%;
+  }
+}
+
+/* Bardziej dopracowane mobile: mniejsze logo i tekst */
+@media (max-width: 480px) {
+  .logo-left img {
+    height: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid var(--zloty);
+  }
+
+  .logo-right .name {
+    font-size: 1rem;
+  }
+
+  .logo-right .title {
+    font-size: 0.8rem;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .main-nav ul {
+    width: 100%;
+  }
+  
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Ukryj hamburger na większych ekranach */
+.burger {
+  display: none;
+}

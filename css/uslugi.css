@@ -1,0 +1,158 @@
+/* ---------- Wrapper i sekcja wprowadzenia ---------- */
+.usluga-intro-wrapper {
+  position: relative; /* potrzebne dla absolutnego pozycjonowania .back-link */
+  width: 100%;
+}
+
+.usluga-intro-section {
+  position: relative;
+  background-color: var(--granat);
+  color: black;
+  overflow: hidden;
+  background-image: url('../img/tlo szare.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 2rem; /* padding zamiast szerokości i przesunięć dla poprawnego pozycjonowania */
+  text-align: center;
+}
+
+.usluga-intro-section::before,
+.usluga-intro-section::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background: var(--bialy);
+  z-index: 2;
+}
+
+.usluga-intro-section::before {
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.usluga-intro-section::after {
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+}
+
+/* Kontener tekstowy w sekcji wprowadzenia */
+.usluga-intro-section > .usluga-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 10;
+  color: black;
+}
+
+.usluga-intro-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.usluga-intro-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ---------- Główna sekcja usług ---------- */
+.usluga-section {
+  padding: 4rem 2rem;
+  color: var(--granat);
+}
+
+.usluga-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.usluga-container h1 {
+  font-size: 2rem;
+  color: var(--zloty);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.usluga-container h2 {
+  font-size: 1.4rem;
+  color: var(--granat);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.usluga-container p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  font-weight: 500;
+}
+
+.usluga-container strong {
+  color: var(--zloty);
+  font-weight: 600;
+}
+
+.usluga-container em {
+  font-style: italic;
+  color: var(--granat);
+}
+
+/* Lista usług */
+.usluga-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--granat);
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Sekcja kontaktu */
+.kontakt-call {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.kontakt-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--zloty);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.kontakt-link:hover {
+  color: var(--granat);
+}
+
+/* ---------- Back-link (np. „Wstecz”) ---------- */
+.back-link {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background-color: rgba(255 255 255 / 0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--zloty);
+  z-index: 20;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--granat);
+}

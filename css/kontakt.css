@@ -1,0 +1,262 @@
+/* ----------------------------
+   Ogólny kontener sekcji kontakt
+---------------------------- */
+.content {
+  padding: 3rem 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Nagłówek strony - duży, wyśrodkowany */
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--zloty);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Kontener dwóch kolumn: dane + mapa */
+.contact-wrapper {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Kolumny mają minimum 300px i dzielą przestrzeń równomiernie */
+.contact-info,
+.contact-map {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+/* Tytuł danych kontaktowych */
+.contact-info h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--granat);
+}
+
+/* Styl dla każdej linii w danych kontaktowych */
+/* Używamy flexboxa, żeby ikonki i tekst były na jednej linii */
+.contact-info p {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin: 0.6rem 0;
+  gap: 0.6rem; /* odstęp między ikoną a tekstem */
+  line-height: 1.4;
+}
+
+/* Linki w danych kontaktowych */
+.contact-info a {
+  color: var(--granat);
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Mapa ma 100% szerokości swojej kolumny i ustaloną wysokość */
+.contact-map iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ---------- Formularz ------------ */
+.form {
+  border-radius: 22px;
+  background-image: url('../img/tlo szare pp.png');
+  background-repeat: no-repeat;
+  background-position: center center; /* możesz zmienić wg potrzeb */
+  background-size: cover;
+  position: relative;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+.form::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* czarny półprzezroczysty overlay */
+  pointer-events: none; /* kliknięcia przechodzą przez warstwę */
+  z-index: 1;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+.contact-form {
+  margin: 0 auto 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Każda linia formularza */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Dwie kolumny obok siebie (np. email + telefon) */
+.form-row.two-columns {
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+/* W dwu-kolumnowym wierszu etykiety rozciągnięte */
+.form-row.two-columns label {
+  flex: 1;
+}
+
+/* Szerokość formularza */
+.formula {
+  max-width: 1300px;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Wszystkie labelki z inputami i textarea jako kolumny */
+label {
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputy i textarea */
+input, textarea {
+  padding: 0.6rem 0.8rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--zloty);
+  outline: none;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+/* Sekcja zgód */
+.form-consent {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 1rem;
+}
+
+.form-consent a {
+  text-decoration: none;
+  color: #444;
+}
+
+.form-consent a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Paragraf z wprowadzeniem do zgód */
+.form-consent p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Labelki zgód: checkbox + tekst na jednej linii */
+.consent-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+/* Checkboxy lekko większe i wyrównane */
+.consent-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Tekst pod zgodami */
+.consent-clause {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.6rem;
+  line-height: 1.3;
+}
+
+/* Przycisk z marginesem na dole dla odstępu od stopki */
+.btn {
+  background: var(--zloty);
+  border: none;
+  padding: 0.85rem 2rem;
+  color: var(--granat);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: #c18f17;
+  color: var(--granat);
+}
+
+/* Animowany przycisk */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animated::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--zloty) 20%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+.btn-animated:hover::before {
+  opacity: 0.3;
+  animation: pulse 1.5s infinite;
+}
+
+/* RESPONSYWNOŚĆ: na węższych ekranach kolumny układają się pionowo */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+  .form-row.two-columns {
+    flex-direction: column;
+  }
+}

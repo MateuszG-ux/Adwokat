@@ -1,0 +1,173 @@
+/* ---------- Oferta Intro ---------- */
+.oferta-intro strong {
+  color: var(--zloty);
+}
+
+.oferta-intro em {
+  font-style: italic;
+  color: var(--granat);
+}
+
+.oferta-intro ul {
+  margin-left: 1.25rem;
+  margin-bottom: 1.5rem;
+  list-style-type: disc;
+  color: var(--granat);
+  font-weight: 500;
+}
+
+.oferta-intro p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  font-weight: 500;
+}
+
+/* Kontener oferty */
+.oferta-section {
+  padding: 4rem 2rem;
+  color: var(--granat);
+}
+
+/* Nagłówki sekcji oferty */
+.oferta-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--zloty);
+  margin-bottom: 1.5rem;
+}
+
+/* Kontener tekstowy z ograniczoną szerokością */
+.oferta-intro {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--granat);
+}
+
+/* Sekcja z tłem i dekoracją */
+.oferta-intro-section {
+  position: relative;
+  background-color: var(--granat);
+  color: black;
+  overflow: hidden;
+  background-image: url('../img/tlo szare.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5rem;
+}
+
+.oferta-intro-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--bialy);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 2;
+}
+
+.oferta-intro-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--bialy);
+  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  z-index: 2;
+}
+
+.oferta-intro-section > .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------- Grid oferty ---------- */
+.oferta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Pojedynczy box oferty jako link */
+.oferta-grid a.oferta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  border: 2px solid var(--zloty);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  color: var(--granat);
+  text-decoration: none;
+  font-weight: 600;
+  height: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.oferta-grid a.oferta-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.35);
+  border-color: rgba(212, 175, 55, 0.8);
+  cursor: pointer;
+}
+
+/* Obrazek na górze boxa */
+.oferta-box img {
+  width: 260px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* Tytuł oferty */
+.oferta-box h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: inherit;
+}
+
+/* Link "dowiedz się więcej" */
+.oferta-box .dowiedz {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--zloty);
+  font-weight: 500;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.oferta-box:hover .dowiedz {
+  color: var(--granat);
+}
+
+/* ---------- Responsywność ---------- */
+@media (max-width: 992px) {
+  .oferta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .oferta-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .oferta-grid a.oferta-box {
+    height: auto;
+    padding: 1.5rem;
+  }
+}

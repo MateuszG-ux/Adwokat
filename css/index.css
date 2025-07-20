@@ -1,0 +1,340 @@
+/* Animacja pulse */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Reset i box-sizing */
+.klient-section,
+.klient-section * {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Sekcja klient */
+.klient-section {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.klient-content {
+  display: flex;
+  height: 545px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.klient-left {
+  flex: 4.5;
+  height: 100%;
+}
+
+.klient-left img {
+  margin: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.klient-right {
+  flex: 5.5;
+  position: relative;
+  color: var(--granat);
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.klient-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/tlo szare pp.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* Kontener cytatu i podpisu - wyśrodkowanie pionowe */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Cytat */
+.content-wrapper blockquote {
+  font-size: 2.5rem;
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+/* Podpis */
+.content-wrapper h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: right;
+}
+
+/* Sekcja O nas */
+.onas-section {
+  position: relative;
+  background-color: var(--granat);
+  color: black;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  background-image: url('../img/tlo szare.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5rem;
+}
+
+.onas-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--bialy);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 2;
+}
+
+.onas-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--bialy);
+  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  z-index: 2;
+}
+
+/* Treść w sekcji O nas */
+.onas-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.onas-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.onas-content p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* Sekcja Oferta */
+.oferta-section {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.oferta-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: var(--granat);
+}
+
+/* Siatka kafelków */
+.oferta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.oferta-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Pojedynczy kafelek */
+.kafelek {
+  background: #fff;
+  color: var(--granat);
+  padding: 1.5rem;
+  width: 100%;
+  height: 250px;
+  border: 2px solid var(--zloty);
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Ikony kafelków */
+.ikona-uslugi {
+  width: 280px;
+  height: 220px;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  object-fit: contain;
+}
+
+/* Tekst w kafelkach */
+.kafelek p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--granat);
+}
+
+/* Hover efekt */
+.kafelek:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 30px rgba(212, 175, 55, 0.5);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+/* Kafelek "przejście do oferty" */
+.kafelek.przejscie {
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.kafelek.przejscie .arrow {
+  font-size: 3rem;
+  color: var(--zloty);
+  display: block;
+  line-height: 1;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 992px) {
+  /* Dla mniejszych tabletów: klient-content stackuje się pionowo */
+  .klient-content {
+    flex-direction: column;
+    height: auto;
+  }
+  .klient-left,
+  .klient-right {
+    flex: unset;
+    height: auto;
+    width: 100%;
+  }
+  .content-wrapper {
+    max-width: 95%;
+    padding: 1rem 0;
+  }
+  .content-wrapper blockquote {
+    font-size: 2rem;
+  }
+  .content-wrapper h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Oferta: 1 kolumna */
+  .oferta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Kafelek mniejszy */
+  .kafelek {
+    height: 200px;
+    font-size: 1.1rem;
+  }
+
+  .ikona-uslugi {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Sekcja O nas: padding mniejszy */
+  .onas-section {
+    padding: 3rem 1rem;
+  }
+
+  .onas-content h2 {
+    font-size: 2rem;
+  }
+  .onas-content p {
+    font-size: 1rem;
+  }
+
+  /* Sekcja klient: dopasowanie wysokości i marginesów */
+  .klient-section {
+    padding: 0 1rem;
+  }
+}
+
+/* Bardzo małe ekrany */
+@media (max-width: 480px) {
+  .content-wrapper blockquote {
+    font-size: 1.6rem;
+  }
+
+  .content-wrapper h2 {
+    font-size: 1.1rem;
+  }
+
+  .onas-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .onas-content p {
+    font-size: 0.95rem;
+  }
+
+  .kafelek {
+    height: 180px;
+    font-size: 1rem;
+  }
+
+  .ikona-uslugi {
+    width: 50px;
+    height: 50px;
+  }
+}

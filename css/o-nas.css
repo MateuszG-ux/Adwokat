@@ -1,0 +1,124 @@
+/* === SEKCJA O NAS – OGÓLNA === */
+.onas-section {
+  position: relative;
+  background-color: var(--granat);
+  color: white;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  background-image: url('../img/cennik.png'); /* zmienione tło */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5rem;
+}
+
+/* Kontener z treścią, ponad pseudo-elementami */
+.onas-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3; /* nad ::before i ::after */
+  padding: 2rem 1rem;
+}
+
+/* Pseudo-elementy dekoracyjne – jasne trójkąty na górze i dole */
+.onas-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  background: var(--bialy);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 1;
+}
+
+.onas-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 12%;
+  background: var(--bialy);
+  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  z-index: 1;
+}
+
+/* Nagłówek sekcji O Nas */
+.onas-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--zloty);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+/* Paragrafy w sekcji O Nas */
+.onas-section p {
+  z-index: 1;
+  font-weight: 600;
+}
+
+/* === SEKCJA ZESPÓŁ === */
+.team-section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Nagłówek sekcji zespół */
+.team-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--zloty);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+/* Pojedynczy członek zespołu - elastyczny układ z odstępem */
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+/* Zdjęcie członka zespołu */
+.team-photo img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Informacje o członku zespołu */
+.team-info {
+  flex: 1;
+}
+
+.team-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: var(--granat);
+}
+
+.team-info p {
+  margin: 5px 0;
+  color: var(--granat);
+}
+
+/* Linki kontaktowe lub inne */
+.team-info a {
+  color: var(--granat);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.team-info a:hover {
+  text-decoration: underline;
+}
