@@ -285,10 +285,12 @@
   .content-wrapper blockquote {
     font-size: 2rem;
     text-align: center !important;
+    width:100%;
   }
   .content-wrapper h2 {
     font-size: 1.3rem;
     text-align: right !important;
+    width:100%;
   }
 }
 
