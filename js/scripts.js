@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(email);
   }
 
-  // Obsługa burgera (spójna z CSS)
+   // Obsługa burgera (toggle na <ul>)
   const burger = document.querySelector(".burger");
-  const navList = document.querySelector(".main-nav");
+  const navList = document.querySelector(".main-nav ul");
 
   if (burger && navList) {
     burger.addEventListener("click", () => {
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  
   if (scrollBtn) {
     scrollBtn.addEventListener("click", (e) => {
       e.preventDefault();
