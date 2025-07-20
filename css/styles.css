@@ -310,7 +310,12 @@ footer.footer::before {
   visibility: visible;
 }
 
-/* ------------------ RESPONSYWNOŚĆ ------------------ */
+/* Ukryj hamburger na większych ekranach */
+.burger {
+  display: none;
+}
+
+/* ======= RESPONSYWNOŚĆ ======= */
 
 /* Tablet i mniejsze laptopy */
 @media (max-width: 992px) {
@@ -323,9 +328,10 @@ footer.footer::before {
     order: 3;
     flex-basis: 100%;
     display: none;
-    background: var(--granat);
+    background: var(--bialy);
     padding: 1rem 0;
     justify-content: center;
+    position: relative;
   }
 
   .main-nav ul {
@@ -334,36 +340,53 @@ footer.footer::before {
     align-items: center;
   }
 
+  .main-nav.show {
+    display: flex;
+  }
+
   .burger {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
     order: 1;
   }
 
-  .main-nav.show {
-    display: flex;
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--granat);
+    transition: all 0.3s ease;
   }
 }
 
 /* Telefon (smartfony) */
 @media (max-width: 768px) {
-  nav ul {
+  .main-nav ul {
+    display: none;
     flex-direction: column;
-    background: var(--granat);
+    background: var(--bialy);
     position: absolute;
     top: 100%;
     right: 0;
-    width: 200px;
-    display: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    border-radius: 0 0 4px 4px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+    min-width: 200px;
   }
 
-  nav ul.show {
+  .main-nav ul.show {
     display: flex;
   }
 
-  nav ul li {
-    margin: 1rem 0;
+  .main-nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  .main-nav ul a {
+    font-weight: 600;
+    color: var(--granat);
   }
 
   .burger {
@@ -380,15 +403,15 @@ footer.footer::before {
   .burger div {
     width: 100%;
     height: 4px;
-    background: var(--bialy);
+    background: var(--granat);
     margin: 4px 0;
     transition: all 0.3s ease;
   }
 
-  /* Stopka - kolumny w pion */
   .footer-container {
     flex-direction: column;
   }
+
   .footer-column {
     flex: 1 1 100%;
   }
@@ -423,9 +446,4 @@ footer.footer::before {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
   }
-}
-
-/* Ukryj hamburger na większych ekranach */
-.burger {
-  display: none;
 }
