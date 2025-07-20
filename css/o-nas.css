@@ -3,7 +3,6 @@
   position: relative;
   background-color: var(--granat);
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 4rem 2rem;
   overflow: hidden;
   background-image: url('../img/cennik.png'); /* zmienione tło */
@@ -61,6 +60,7 @@
 .onas-section p {
   z-index: 1;
   font-weight: 600;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
 }
 
 /* === SEKCJA ZESPÓŁ === */
