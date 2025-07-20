@@ -277,7 +277,7 @@
     color: var(--granat);
   }
   .content-wrapper {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 1rem 0;
     display: block;
