@@ -260,3 +260,46 @@ textarea {
     flex-direction: column;
   }
 }
+
+@media (max-width: 600px) {
+  /* Formularz - zmniejszamy odstępy i padding */
+  .contact-form {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Mniejsze pola input i textarea */
+  input, textarea {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* Wiersze z dwoma kolumnami ustawiamy pionowo */
+  .form-row.two-columns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Mniejsze etykiety */
+  label {
+    font-size: 0.9rem;
+  }
+
+  /* Mniejszy i szerszy przycisk */
+  .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    max-width: 100%;
+  }
+
+  /* Mniejsze czcionki przy checkboxach i zgodach */
+  .form-consent,
+  .consent-label {
+    font-size: 0.85rem;
+  }
+
+  /* Mniejsza wysokość mapy na telefonach */
+  .contact-map iframe {
+    height: 300px;
+  }
+}
