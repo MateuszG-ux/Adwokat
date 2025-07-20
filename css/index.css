@@ -251,10 +251,9 @@
 
 /* RESPONSYWNOŚĆ */
 @media (max-width: 992px) {
-  /* Dla mniejszych tabletów: klient-content pionowo */
   .klient-content {
-    flex-direction: column !important; /* pionowo */
-    height: auto; /* wysokość dostosowana */
+    flex-direction: column !important;
+    height: auto;
   }
   .klient-left,
   .klient-right {
@@ -263,22 +262,24 @@
     height: auto;
     max-width: 100vw;
   }
-  /* Ukrycie tła obrazu w .klient-right */
+  /* Wymuszone ukrycie pseudo-elementu */
   .klient-right::before {
-    display: none;
+    display: none !important;
+    content: none !important;
+    background: none !important;
   }
-  /* Białe tło i marginesy dla .klient-right */
+  /* Usunięcie tła na mobilkach */
   .klient-right {
-    background-color: white;
+    background-color: white !important;
+    background-image: none !important;
     padding: 1rem 0;
     color: var(--granat);
   }
-  /* Tekst pod obrazkiem, max szerokość 80%, wyśrodkowany */
   .content-wrapper {
     max-width: 80%;
     margin: 0 auto;
     padding: 1rem 0;
-    display: block; /* normalny flow */
+    display: block;
   }
   .content-wrapper blockquote {
     font-size: 2rem;
